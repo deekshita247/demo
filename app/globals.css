@@ -113,3 +113,51 @@ h1 { margin: 28px 0 30px; font: 500 clamp(50px, 7.2vw, 112px)/.88 'Playfair Disp
   .relay-player { padding-bottom: 32px; }
   .relay-footer { font-size: 8px; gap: 25px; }
 }
+
+/* Final chapter: scoped spring-driven ring and arc. */
+.morph-chapter { position: relative; isolation: isolate; color: var(--paper); background: radial-gradient(ellipse at 50% 32%, #10323555, transparent 45%), radial-gradient(ellipse at 78% 70%, #38243d35, transparent 40%), #071015; border-top: 1px solid #a8dedb18; }
+.morph-stage { position: relative; height: 100svh; min-height: 620px; overflow: clip; outline: none; }
+.morph-stage:focus-visible { outline: 1px solid #a8dedb77; outline-offset: -5px; }
+.morph-topline { position: absolute; top: 34px; left: 7.5vw; right: 7.5vw; display: flex; justify-content: space-between; color: #82999b; font: 9px 'DM Mono', monospace; letter-spacing: .13em; text-transform: uppercase; }
+.morph-composition { position: absolute; inset: 0; pointer-events: none; perspective: 1200px; }
+.morph-card { position: absolute; left: 50%; top: 50%; padding: 0; border: 0; border-radius: 5px; background: transparent; cursor: pointer; pointer-events: auto; will-change: transform; }
+.morph-card-face { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; border-radius: 5px; border: 1px solid #c5e4db4d; background: #102126; box-shadow: 0 12px 30px #0007; }
+.morph-card img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.morph-card-face > span { position: absolute; bottom: 8px; left: 9px; color: #fff; text-shadow: 0 1px 5px #000; font: 8px 'DM Mono', monospace; }
+.morph-card:focus-visible { outline: 2px solid var(--acid); outline-offset: 5px; }
+.morph-orbit-guide { position: absolute; top: 50%; left: 50%; translate: -50% -50%; border: 1px solid #a8dedb12; border-radius: 50%; pointer-events: none; }
+.morph-copy { position: absolute; width: 100%; top: 50%; translate: 0 -50%; text-align: center; pointer-events: none; }
+.morph-eyebrow { margin: 0 0 20px; color: #8da9aa; font: 9px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .14em; }
+.morph-copy h2 { margin: 0; font: 500 clamp(36px, 4.3vw, 65px)/1 'Playfair Display', Georgia, serif; letter-spacing: -.045em; }
+.morph-copy h2 em { color: #a8dedb; font-weight: 500; }
+.morph-description { margin: 20px 0 0; color: #8fa0a2; font: 12px/1.7 'Manrope', sans-serif; }
+.morph-scroll-note { position: absolute; bottom: 32px; left: 0; width: 100%; text-align: center; pointer-events: none; color: #8da1a4; font: 9px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .12em; }
+.morph-scroll-note > div { width: 96px; height: 1px; margin: 16px auto 0; background: #a8dedb25; }
+.morph-scroll-note i { display: block; width: 100%; height: 100%; background: #a8dedb; transform-origin: left; }
+.morph-ending { padding: 60px 7.5vw 28px; background: linear-gradient(transparent, #05090d); }
+.morph-ending > p { margin: 0 0 55px; text-align: center; color: #a6b6b5; font: italic 500 clamp(24px, 3vw, 40px) 'Playfair Display', Georgia, serif; }
+.morph-ending > div { border-top: 1px solid #a8dedb1a; padding-top: 22px; display: flex; justify-content: space-between; gap: 24px; color: #758e91; font: 9px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
+.morph-ending a { color: #a8dedb; text-decoration: none; }
+.morph-viewer { position: fixed; inset: 0; margin: 0; padding: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; border: 0; background: rgb(4 8 12 / .94); color: var(--paper); overflow: hidden; overscroll-behavior: contain; }
+.morph-viewer[open] { display: flex; justify-content: center; align-items: center; }
+.morph-viewer::backdrop { background: rgb(4 8 12 / .5); }
+.morph-viewer > img { display: block; width: auto; height: auto; max-width: 92vw; max-height: 88dvh; object-fit: contain; }
+.morph-viewer button { position: absolute; z-index: 2; border: 1px solid #a8dedb35; background: #07101599; color: #dce9e6; cursor: pointer; min-height: 44px; padding: 12px; font: 11px 'DM Mono', monospace; }
+.morph-viewer button:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
+.morph-viewer-close { top: 16px; right: 3vw; border-radius: 4px; text-transform: uppercase; letter-spacing: .08em; }
+.morph-viewer-prev, .morph-viewer-next { top: calc(50% - 22px); width: 44px; border-radius: 50%; }
+.morph-viewer-prev { left: 1vw; }
+.morph-viewer-next { right: 1vw; }
+.morph-viewer-caption { position: absolute; bottom: 15px; margin: 0; font: 10px 'DM Mono', monospace; letter-spacing: .08em; color: #9aafb0; }
+.morph-viewer-caption span { margin-left: 18px; color: #dce9e6; }
+@media (max-width: 600px) {
+  .morph-topline { top: 26px; font-size: 8px; }
+  .morph-topline span:last-child { display: none; }
+  .morph-eyebrow { font-size: 7px; margin-bottom: 12px; }
+  .morph-copy h2 { font-size: 32px; }
+  .morph-description { font-size: 10px; margin-top: 12px; }
+  .morph-scroll-note { font-size: 8px; }
+  .morph-ending > div { font-size: 8px; }
+  .morph-viewer-caption { bottom: 24px; font-size: 9px; }
+  .morph-viewer-prev, .morph-viewer-next { top: auto; bottom: 60px; }
+}

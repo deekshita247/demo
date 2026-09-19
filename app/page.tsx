@@ -1,3 +1,4 @@
+import IntroAnimation from "@/components/ui/scroll-morph-hero";
 import ImageGalleryExperience from "@/components/ImageGalleryExperience";
 
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
@@ -15,5 +16,6 @@ export default function Home() {
       textBlend
     />
     <ImageGalleryExperience />
+    <IntroAnimation />
   </main>;
 }

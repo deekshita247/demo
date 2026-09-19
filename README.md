@@ -101,3 +101,31 @@ QA covered all six forward steps, backward wraparound, autoplay 06-to-01,
 seven rapid clicks, persistent image nodes and moving transforms, manual pause,
 shared stack selection, keyboard navigation, mobile swipe, and reduced motion.
 Production build and ESLint pass.
+
+## Section 4: scroll-morph finale
+
+`components/ui/scroll-morph-hero.tsx` is an original implementation of the requested
+sequence (no source component was available). `app/page.tsx` appends it after the
+existing gallery/relay, without replacing Sections 1?3. No packages were added.
+
+The six existing local photographs form a deterministic scatter, a line, and a
+circle when the chapter enters view. Framer Motion springs then interpolate
+circle radius/angle to a lower arc radius/apex/spread. Further input cycles the
+images through the arc; recycling is hidden at the seam. Desktop parallax and
+hover tilt are subtle and disabled with reduced motion. All cards are buttons.
+
+Wheel/touch listeners belong only to the stage. Input is consumed only after the
+intro while the stage is substantially visible and its 0?2400 scroll range can
+move in that direction. Up at zero and down at the maximum fall through to native
+page scrolling. Keyboard arrows/PageUp/PageDown work when the stage is focused.
+Timers, observers, listeners, and MotionValue subscriptions are cleaned up.
+
+The native modal dialog supplies focus containment and focus restoration;
+AnimatePresence supplies open/close and image transitions. Photos use contain,
+92vw maximum width, and 88dvh maximum height. Escape, backdrop, and Close dismiss;
+image clicks do not. Previous/next buttons and arrow keys wrap through the same
+six images. Styling is scoped to this chapter and matches the dark relay palette.
+
+QA: all six card clicks, original aspect ratios, all dismissal paths, image-click
+behavior, fullscreen wraparound, desktop scroll boundaries, mobile tap/touch morph,
+responsive overflow, and the scatter/line/circle phase sequence. Build and lint pass.
